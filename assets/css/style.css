@@ -1,0 +1,239 @@
+/* =========================================
+   1. BASE PALETTE (The Raw Colors)
+   ========================================= */
+/* =========================================
+   2. SEMANTIC COLORS (How we use them)
+   ========================================= */
+/* =========================================
+   3. TYPOGRAPHY (Fonts & Sizes)
+   ========================================= */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #FFFFFF;
+  color: #1B1B1B;
+  line-height: 1.5;
+}
+
+input, button, textarea, select {
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+p {
+  font-size: 1rem;
+  color: #B5B5B5;
+}
+
+a {
+  text-decoration: none;
+  color: #1F1F21;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.btn {
+  width: 100%;
+  padding: 0.75rem;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+.btn__dark {
+  padding: 0.8rem 2.5rem;
+  background-color: #1F1F21;
+  color: #FFFFFF;
+  border-radius: 5px;
+}
+.btn--submit {
+  margin-top: 1rem;
+}
+.btn--submit:hover {
+  opacity: 0.9;
+}
+.btn__white {
+  padding: 0.8rem 2.5rem;
+  background-color: #FFFFFF;
+  color: #1F1F21;
+  border: 2px solid #E6E6E6;
+  border-radius: 5px;
+}
+.btn--google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn--google .icon-google {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.btn--google:hover {
+  opacity: 0.9;
+  background-color: #E6E6E6;
+}
+.btn--x {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.btn--x:hover {
+  opacity: 0.9;
+}
+.btn--x .icon-x {
+  width: 1.1rem;
+  height: 1.1rem;
+  filter: invert(1);
+}
+
+.signup-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  min-height: 100vh;
+}
+.signup-layout__hero {
+  padding: 4rem; /* Gives the form some breathing room */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+.signup-layout__hero > header, .signup-layout__hero > form, .signup-layout__hero > .hero_social {
+  width: 100%;
+  max-width: 400px; /* Keeps the content from stretching too wide on large screens */
+  margin-bottom: 2rem;
+}
+.signup-layout__sidebar {
+  background-color: #E6E6E6; /* A temporary gray background where your image will go */
+  padding: 4rem;
+  background-image: url(../images/windows-QxTTK-NhKsY-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero__header {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #1B1B1B;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.form-group__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1F1F21;
+}
+.form-group__input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #E6E6E6;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-group__input:not(:-moz-placeholder):invalid {
+  border-color: #ef4444; /* A sharp red */
+  color: #ef4444;
+}
+.form-group__input:not(:placeholder-shown):invalid {
+  border-color: #ef4444; /* A sharp red */
+  color: #ef4444;
+}
+.form-group__input:not(:-moz-placeholder):invalid:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1); /* Red glow */
+}
+.form-group__input:not(:placeholder-shown):invalid:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1); /* Red glow */
+}
+.form-group__input:not(:-moz-placeholder):valid {
+  border-color: #22c55e; /* A clean green */
+}
+.form-group__input:not(:placeholder-shown):valid {
+  border-color: #22c55e; /* A clean green */
+}
+.form-group__input:not(:-moz-placeholder):valid:focus {
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1); /* Green glow */
+}
+.form-group__input:not(:placeholder-shown):valid:focus {
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1); /* Green glow */
+}
+.form-group__input:focus {
+  outline: none;
+  border-color: #B5B5B5;
+  box-shadow: 0 0 0 2px rgba(181, 181, 181, 0.2);
+}
+
+.hero__social {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  color: #B5B5B5;
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: 80%;
+  margin: 1.5rem 0;
+}
+.divider::before, .divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid #E6E6E6;
+}
+.divider::before {
+  margin-right: 1rem;
+}
+.divider::after {
+  margin-left: 1rem;
+}/*# sourceMappingURL=style.css.map */

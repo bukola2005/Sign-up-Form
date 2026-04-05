@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Sign-Up</title>
+</head>
+<body>
+    <main class="signup-layout">
+        <section class="signup-layout__hero">
+            <header>
+                <h1 class="hero__header">Create account</h1>
+                <p>Join our 100% free creative network.</p>
+            </header>
+            
+            <div class="hero__social">
+                <button class="btn btn__white btn--google"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo" class="icon-google">   Sign up with Google</button>
+
+                <button class="btn btn__dark btn--x"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt="X Logo" class="icon-x"> Sign up with X</button>
+            </div>
+
+             <p class="divider">OR</p>
+             
+            <form action="#" class="form-signup">
+                <div class="form-group">
+                <label for="user-name" class="form-group__label">Name*</label>
+                <input type="text" id="user-name"  class="form-group__input"  name="user_name" required placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                <label for="user-email" class="form-group__label">Email*</label>
+
+                <input type="email" id="user-email" class="form-group__input" name="user_email" required placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                <label for="user-password" class="form-group__label" >Password*</label>
+
+                <input type="password" id="user-password" class="form-group__input"
+                name="user_password" minlength="8" required placeholder="Create a password">
+                </div>
+
+
+                <button type="submit" class="btn btn--submit btn__dark">Sign up</button>
+
+             
+            </form>
+            
+               <p>Already have an account? <a href="#"> Log in</a></p>
+
+        </section>
+        <aside class="signup-layout__sidebar">
+            
+            <p class="sidebar__quote">
+                Jxin the world's largest netwark Already have an account? Log in of designers and digital creatives
+            </p>
+
+            <div class="sidebar__description">
+            <h3>
+                Join and get inspired by then work 100,000+ designers.
+            </h3>
+            <h3 >
+                Share your design work, build  your portfclio, and get hired.
+            </h3>
+            </div>
+            <p class="sidebar__testimonials">
+                Amelia Lund @ameliaaaa
+                Sydney, Australla
+            </p>
+            <p class="sidebar__testimonials">
+                Alex Herman @alexdrins
+                Password" @ Melbcume, Australia
+            </p>
+        </aside>
+    </main>
+</body>
+</html>

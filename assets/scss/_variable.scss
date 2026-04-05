@@ -1,0 +1,30 @@
+// _variables.scss
+/* =========================================
+   1. BASE PALETTE (The Raw Colors)
+   ========================================= */
+$color-white: #FFFFFF;
+$color-gray-200: #E6E6E6; // Light border color
+$color-gray-500: #B5B5B5; // Muted text color
+$color-gray-900: #1F1F21; // Dark text / Button background
+
+/* =========================================
+   2. SEMANTIC COLORS (How we use them)
+   ========================================= */
+$color-text-main: #1B1B1B; // Main text color
+$color-text-muted: $color-gray-500;
+$color-border: $color-gray-200;
+
+$color-button-bg: $color-gray-900;
+$color-button-text: $color-white; // DRY principle in action!
+
+/* =========================================
+   3. TYPOGRAPHY (Fonts & Sizes)
+   ========================================= */
+$font-main: 'Inter', sans-serif;
+
+// Note: 1rem is usually equal to 16px. 
+$font-size-xs: 0.75rem;   // ~12px (Good for tiny footer text)
+$font-size-sm: 0.875rem;  // ~14px (Good for labels)
+$font-size-base: 1rem;    // ~16px (Normal paragraph text)
+$font-size-lg: 1.125rem;  // ~18px (Slightly larger text)
+$font-size-h1: 2.5rem;      // ~32px (The main "Create account" heading)
