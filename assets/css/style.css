@@ -35,19 +35,13 @@ h6 {
   font-weight: 700;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
 p {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #B5B5B5;
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
   color: #1F1F21;
 }
 a:hover {
@@ -61,9 +55,8 @@ img {
 
 .btn {
   width: 100%;
-  padding: 0.75rem;
   outline: none;
-  font-size: 1rem;
+  font-size: 0.8rem;
   transition: all 0.3s ease;
   cursor: pointer;
   border: none;
@@ -75,13 +68,13 @@ img {
   border-radius: 5px;
 }
 .btn--submit {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 .btn--submit:hover {
   opacity: 0.9;
 }
 .btn__white {
-  padding: 0.8rem 2.5rem;
+  padding: 0.7rem 2.5rem;
   background-color: #FFFFFF;
   color: #1F1F21;
   border: 2px solid #E6E6E6;
@@ -119,10 +112,17 @@ img {
 .signup-layout {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  .signup-layout {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+  }
 }
 .signup-layout__hero {
-  padding: 4rem; /* Gives the form some breathing room */
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -135,9 +135,8 @@ img {
   margin-bottom: 2rem;
 }
 .signup-layout__sidebar {
-  background-color: #E6E6E6; /* A temporary gray background where your image will go */
   padding: 4rem;
-  background-image: url(../images/windows-QxTTK-NhKsY-unsplash.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url("../images/windows-QxTTK-NhKsY-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -146,10 +145,79 @@ img {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  clip-path: url(#s-curve-corner);
+  border-radius: 24px 24px 24px 24px !important;
+  margin: 1rem;
+}
+@media (max-width: 767px) {
+  .signup-layout__sidebar {
+    display: none;
+  }
+}
+.signup-layout__sidebar .glass-tag {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1490196078);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3019607843);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.signup-layout__sidebar .glass-tag strong {
+  font-weight: 600;
+}
+.signup-layout__sidebar .glass-tag span {
+  opacity: 0.8;
+  font-size: 0.75rem;
+}
+.signup-layout__sidebar .tag-top-right {
+  top: 10%;
+  right: 15%;
+}
+.signup-layout__sidebar .tag-mid-right {
+  top: 40%;
+  right: 50%;
+}
+.signup-layout__sidebar {
+  /* Ensuring the main text stays at the very bottom */
+}
+.signup-layout__sidebar .sidebar-content {
+  width: 100%;
+  margin-top: auto;
+}
+.signup-layout__sidebar .sidebar-content__title {
+  color: #FFFFFF;
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.signup-layout__sidebar .sidebar-content__title em {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+}
+.signup-layout__sidebar .sidebar-content__footer {
+  display: flex;
+  gap: 3rem;
+}
+.signup-layout__sidebar .sidebar-content__footer .footer-description {
+  background: transparent;
+  border: 2px solid #FFFFFF;
+  padding: 0.5rem 0.7rem;
+  border-radius: 12px;
+}
+.signup-layout__sidebar .sidebar-content__footer .footer-description > h3 {
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 
 .hero__header {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 0.5rem;
   color: #1B1B1B;
 }
@@ -161,7 +229,7 @@ img {
 }
 .form-group__label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   font-family: "Inter", sans-serif;
   font-size: 0.875rem;
   font-weight: 500;
@@ -172,7 +240,7 @@ img {
   padding: 0.75rem 1rem;
   border: 2px solid #E6E6E6;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .form-group__input:not(:-moz-placeholder):invalid {
@@ -224,7 +292,7 @@ img {
   font-size: 0.875rem;
   font-weight: 500;
   width: 80%;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 .divider::before, .divider::after {
   content: "";

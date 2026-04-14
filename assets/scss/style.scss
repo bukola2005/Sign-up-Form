@@ -1,4 +1,5 @@
 @import "variable";
+@import "mixins";
 *,
 *::after,
 *::before {
@@ -26,17 +27,13 @@ h6 {
   font-weight: 700;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
+
 p{
   font-size: $font-size-base;
    color: $color-text-muted;
 }
 a {
-  text-decoration: none;
+  text-decoration: underline;
   color: $color-gray-900;
 
   &:hover {
@@ -49,7 +46,6 @@ img {
 }
 .btn{
   width: 100%;
-  padding: .75rem;
   outline: none;
   font-size: $font-size-base; 
   transition: all 0.3s ease;
@@ -65,7 +61,7 @@ img {
   }
 
    &--submit{
-    margin-top: 1rem;
+    margin-top: .5rem;
   
     &:hover {
         opacity: 0.9;
@@ -73,7 +69,7 @@ img {
    }
 
   &__white{
- padding: .8rem 2.5rem;
+ padding: .7rem 2.5rem;
  background-color: $color-white;
   color:$color-gray-900;
   border:  2px solid $color-border ;
@@ -120,10 +116,16 @@ img {
 .signup-layout {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  min-height: 100vh;
+  height: 100vh;        
+  overflow: hidden;
+
+  @include respond-to('mobile') {
+    grid-template-columns: 1fr; 
+    overflow-y: auto;
+  }
 
   &__hero {
-    padding:  4rem ; /* Gives the form some breathing room */
+    padding:  3rem ; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -141,9 +143,9 @@ img {
   }
 
   &__sidebar {
-    background-color: $color-border; /* A temporary gray background where your image will go */
     padding: 4rem;
-    background-image: url(../images/windows-QxTTK-NhKsY-unsplash.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), 
+                      url('../images/windows-QxTTK-NhKsY-unsplash.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -152,6 +154,105 @@ img {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    clip-path: url(#s-curve-corner);
+  //  clip-path: polygon(
+  //       /* Top-Left S-Curve (Deeper & Smoother) */
+  //       0% 15%, 
+  //       3% 10%, 
+  //       7% 6%, 
+  //       12% 2%, 
+  //       18% 0%, 
+
+  //       /* Top-Right Corner */
+  //       100% 0%, 
+
+  //       /* Bottom-Right S-Curve (Deeper & Smoother) */
+  //       100% 85%, 
+  //       97% 90%, 
+  //       93% 94%, 
+  //       88% 98%, 
+  //       82% 100%, 
+
+  //       /* Bottom-Left Corner */
+  //       0% 100%
+  //   );
+    border-radius: 24px 24px 24px 24px !important;
+    margin: 1rem;
+     @include respond-to('mobile') {
+      display:none;
+    }
+
+    .glass-tag{
+      position: absolute;
+    background: #ffffff26;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid #ffffff4d;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    color: $color-white;
+    font-size: $font-size-base;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    
+    strong { 
+      font-weight: 600; 
+    }
+    span { 
+      opacity: 0.8; 
+      font-size: $font-size-xs; 
+    }
+    }
+    
+.tag-top-right {
+    top: 10%;
+    right: 15%;
+}
+
+.tag-mid-right {
+    top: 40%;
+    right: 50%;
+}
+
+/* Ensuring the main text stays at the very bottom */
+.sidebar-content {
+    width: 100%;
+    margin-top: auto;
+    
+    &__title {
+        color: $color-white;
+        font-size:$font-size-h1;
+        font-weight: 500;
+        margin-bottom: .5rem;
+        
+        em {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+        }
+    }
+
+    &__footer{
+      display: flex;
+       gap: 3rem;
+
+   
+      .footer-description{
+          background: transparent;
+        border: 2px solid $color-white;
+        padding: .5rem .7rem;
+        border-radius: 12px;
+       & > h3{
+        color: $color-white;
+        font-size:$font-size-xs;
+        font-weight: 500;
+        }
+       
+        
+
+      }
+    }
+}
   }
 }
 
@@ -172,7 +273,7 @@ img {
 
   &__label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   font-family: $font-main;
   font-size: $font-size-sm;
   font-weight: 500;
@@ -233,7 +334,7 @@ img {
     font-size: $font-size-sm;
     font-weight: 500;
     width: 80%;  
-    margin: 1.5rem 0; 
+    margin: 1rem 0; 
 
     &::before,
     &::after {
