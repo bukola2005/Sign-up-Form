@@ -57,6 +57,12 @@ img {
   background-color: $color-button-bg;
   color:$color-button-text;
   border-radius: 5px;
+  @include respond-to('mobile') {
+      padding: .6rem 2rem;
+    }
+  @include respond-to('tablet') {
+      padding: .7rem 2.2rem;
+    }
 
   }
 
@@ -74,6 +80,13 @@ img {
   color:$color-gray-900;
   border:  2px solid $color-border ;
   border-radius: 5px;
+  @include respond-to('mobile') {
+      padding: .6rem 2rem;
+    }
+  @include respond-to('tablet') {
+      padding: .7rem 1.6rem;
+      flex-wrap: wrap;
+    }
   }
 
   &--google {
@@ -117,7 +130,7 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   height: 100vh;        
-  overflow: hidden;
+  overflow-x: hidden;
 
   @include respond-to('mobile') {
     grid-template-columns: 1fr; 
@@ -142,7 +155,7 @@ img {
     }
   }
 
-  &__sidebar {
+  &__sidebar{
     padding: 4rem;
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), 
                       url('../images/windows-QxTTK-NhKsY-unsplash.jpg');
@@ -154,31 +167,9 @@ img {
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    clip-path: url(#s-curve-corner);
-  //  clip-path: polygon(
-  //       /* Top-Left S-Curve (Deeper & Smoother) */
-  //       0% 15%, 
-  //       3% 10%, 
-  //       7% 6%, 
-  //       12% 2%, 
-  //       18% 0%, 
-
-  //       /* Top-Right Corner */
-  //       100% 0%, 
-
-  //       /* Bottom-Right S-Curve (Deeper & Smoother) */
-  //       100% 85%, 
-  //       97% 90%, 
-  //       93% 94%, 
-  //       88% 98%, 
-  //       82% 100%, 
-
-  //       /* Bottom-Left Corner */
-  //       0% 100%
-  //   );
-    border-radius: 24px 24px 24px 24px !important;
+    border-radius: 5%; 
     margin: 1rem;
-     @include respond-to('mobile') {
+    @include respond-to('mobile') {
       display:none;
     }
 
@@ -211,7 +202,7 @@ img {
 }
 
 .tag-mid-right {
-    top: 40%;
+    top: 30%;
     right: 50%;
 }
 
@@ -262,6 +253,10 @@ img {
   font-size: $font-size-h1;
   margin-bottom: .5rem;
   color: $color-text-main;
+
+  @include respond-to('mobile') {
+    font-size: $font-size-h1; 
+  }
 }
 
 
@@ -321,9 +316,14 @@ img {
 .hero__social {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 1rem;
   width: 80%;
   margin-bottom: 1rem;
+
+  @include respond-to('tablet') {
+    width: 100%;
+  }
 }
 
 
