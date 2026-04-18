@@ -135,11 +135,47 @@ img {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   height: 100vh;
   overflow-x: hidden;
+  /* Add this inside your @include respond-to('mobile') block */
+}
+.signup-layout .mobile-nav {
+  display: none; /* Hidden by default */
 }
 @media (max-width: 767px) {
   .signup-layout {
     grid-template-columns: 1fr;
     overflow-y: auto;
+  }
+  .signup-layout .mobile-nav {
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  .signup-layout .mobile-nav__logo {
+    font-size: 1.15rem;
+    font-weight: 900;
+    color: #1F1F21;
+    outline: none;
+    border: none;
+    fill: #FFFFFF;
+  }
+  .signup-layout .mobile-nav__menu {
+    display: none; /* Hidden by default */
+  }
+  .signup-layout .mobile-nav__menu:last-child {
+    border-bottom: none;
+  }
+  .signup-layout {
+    /* JavaScript will add this class to show the menu */
+  }
+  .signup-layout .mobile-nav__menu.is-active {
+    display: block;
+    padding: 0.8rem 0;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
   }
 }
 .signup-layout__hero {

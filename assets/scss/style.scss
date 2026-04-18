@@ -132,9 +132,49 @@ img {
   height: 100vh;        
   overflow-x: hidden;
 
+  /* Add this inside your @include respond-to('mobile') block */
+.mobile-nav {
+    display: none; /* Hidden by default */
+}
+
   @include respond-to('mobile') {
     grid-template-columns: 1fr; 
     overflow-y: auto;
+
+
+    .mobile-nav {
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+    &__logo {
+        font-size: $font-size-lg;
+        font-weight: 900;
+        color: $color-gray-900;
+        outline: none;
+        border: none;
+        fill: $color-white;
+    }
+    
+     &__menu {
+        display: none; /* Hidden by default */
+       
+        
+        &:last-child { border-bottom: none; }
+    }
+}
+
+/* JavaScript will add this class to show the menu */
+.mobile-nav__menu.is-active {
+    display: block;
+     padding: 0.8rem 0;
+        color: #333;
+        text-decoration: none;
+        border-bottom: 1px solid #eee;
+}
   }
 
   &__hero {
